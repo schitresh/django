@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="card text-center">
+        <div class="card-body">
+            <h1>Welcome to Pollsapp</h1>
+            <p>This is a polling app</p>
+            <a href="{% url 'polls:index' %}" class="btn btn-sm btn-dark">View the polls</a>
+        </div>
+    </div>
+{% endblock %}

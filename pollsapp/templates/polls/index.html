@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1 class="text-center mb-3">Poll Questions</h1>
+    {% if question_list %}
+        {% for question in question_list %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="lead">{{ question.text }}</p>
+                    <a href="{% url 'polls:detail' question.id %}" class="btn btn-sm btn-primary">Vote</a>
+                    <a href="{% url 'polls:results' question.id %}" class="btn btn-sm btn-secondary">Results</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No polls</p>
+    {% endif %}
+{% endblock %}
